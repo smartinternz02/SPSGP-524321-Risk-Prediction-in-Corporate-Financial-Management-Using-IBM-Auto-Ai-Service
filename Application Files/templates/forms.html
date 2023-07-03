@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input[type="number"],
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>German Credit Card Prediction</h1>
+    <form action="/predict" method="POST"> 
+      <label for="age">Age:</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        step="any"
+        required
+      /><br /><br />
+
+      <label for="sex">Sex:</label>
+      <select id="sex" name="sex" required>
+        <option value="1">Male</option>
+        <option value="0">Female</option></select
+      ><br /><br />
+
+      <label for="job">Job:</label>
+      <input type="text" id="job" name="job" required /><br /><br />
+
+      <label for="housing">Housing:</label>
+      <select id="housing" name="housing" required>
+        <option value="0">Free</option>
+        <option value="1">Own</option>
+        <option value="2">Rent</option></select><br /><br />
+
+      <label for="saving_account">Saving Account:</label>
+      <select id="saving_account" name="saving_account" required>
+        <option value="0">Little</option>
+        <option value="1">Moderate</option>
+        <option value="2">Quite Rich</option>
+        <option value="3">Rich</option></select
+      ><br /><br />
+
+      <label for="checking_amount">Checking Amount:</label>
+      <select id="checking_amount" name="checking_amount" required>
+        <option value="0">Little</option>
+        <option value="1">Moderate</option>
+        <option value="2">Rich</option></select
+      ><br /><br />
+
+      <label for="credit_amount">Credit Amount:</label>
+      <input
+        type="number"
+        id="credit_amount"
+        name="credit_amount"
+        step="any"
+        required
+      /><br /><br />
+
+      <label for="duration">Duration:</label>
+      <input
+        type="number"
+        id="duration"
+        name="duration"
+        step="any"
+        required
+      /><br /><br />
+
+      <label for="purpose">Purpose:</label>
+      <select id="purpose" name="purpose" required>
+        <option value="0">Business</option>
+        <option value="1">Car</option>
+        <option value="2">Domestic Appliances</option>
+        <option value="3">Education</option>
+        <option value="4">Furniture/Equipment</option>
+        <option value="5">Radio/TV</option>
+        <option value="6">Repairs</option>
+        <option value="7">Vacation/Others</option></select
+      ><br /><br />
+
+      <input type="submit" value="Predict" />
+    </form>
+    <h2>{{ prediction_text }}</h2>
+  </body>
+</html> 
